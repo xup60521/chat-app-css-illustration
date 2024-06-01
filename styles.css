@@ -1,0 +1,174 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+:root {
+    --text-pale-violate: hsl(276, 100%, 81%);
+    --text-moderate-violate: hsl(276, 55%, 52%);
+    --text-dark-violet: hsl(271, 15%, 43%);
+    --text-grayish-blue: hsl(206, 6%, 79%);
+    --text-very-dark-violet: hsl(271, 36%, 24%);
+    --text-dark-grayish-violet: hsl(270, 7%, 64%);
+
+    --bg-magenta: hsl(293, 100%, 63%);
+    --bg-violet: hsl(264, 100%, 61%);
+    --bg-app: hsl(270, 20%, 96%);
+    --bg-submit-btn: hsl(271, 36%, 24%);
+    --outline-radio-btn: hsl(289, 100%, 72%);
+
+    --deco-width: 30vw;
+}
+
+html {
+    font-size: 16px;
+    font-family: "Rubik", sans-serif;
+}
+
+body {
+    
+    overflow: hidden;
+    background-color: #fafafa;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-deco-left {
+    position: absolute;
+    /* top: -30vh; */
+    height: 100vh;
+    width: var(--deco-width);
+    top: -20vh;
+    left: -5vw;
+
+    .bg-deco-left-rect {
+        position: absolute;
+        width: 100%;
+        height: calc(100% - var(--deco-width) / 2);
+        /* background: var(--bg-magenta); */
+        background: linear-gradient(
+            180deg,
+            var(--bg-magenta) 0%,
+            var(--bg-violet) 100%
+        );
+        z-index: 10;
+    }
+
+    .bg-deco-left-circle {
+        background-color: var(--bg-violet);
+        aspect-ratio: 1/1;
+        width: 100%;
+        position: absolute;
+        border-radius: 100%;
+        bottom: 0;
+        z-index: 5;
+    }
+}
+
+.bg-deco-right {
+    position: absolute;
+    /* top: -30vh; */
+    height: 100vh;
+    width: var(--deco-width);
+    bottom: -20vh;
+    right: -5vw;
+
+    .bg-deco-right-rect {
+        position: absolute;
+        width: 100%;
+        top: calc(var(--deco-width) / 2);
+        height: calc(100% - var(--deco-width) / 2);
+        /* background: var(--bg-magenta); */
+        
+        background-color: var(--bg-app);
+        z-index: 10;
+    }
+
+    .bg-deco-right-circle {
+        background-color: var(--bg-app);
+        aspect-ratio: 1/1;
+        width: 100%;
+        position: absolute;
+        border-radius: 100%;
+        top: 0;
+        z-index: 5;
+    }
+}
+
+.phone-container {
+    width: 32.5vh;
+    height: 65vh;
+    z-index: 20;
+    background-color: white;
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border-radius: 4vh;
+    padding: 0.75rem;
+    display: flex;
+    flex-direction: column;
+
+    .phone-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-radius: 3vh 3vh 1vh 1vh;
+        background: linear-gradient(
+            270deg,
+            var(--bg-magenta) 0%,
+            var(--bg-violet) 100%
+        );
+
+        .camera-hole {
+            width: 50%;
+            height: 1.5rem;
+            background-color: white;
+            border-radius: 0 0 5rem 5rem;
+        }
+
+        .phone-head-content {
+            display: flex;
+            width: 100%;
+            padding: 1rem;
+            align-items: center;
+            gap: 0.5rem;
+            #back {
+                height: 100%;
+                color: white;
+                font-weight:900;
+                display: flex;
+                font-size: larger;
+                align-items: center;
+                transform:scale(0.6,1.5);
+                padding-left: 1.5rem;
+            }
+            img {
+                height: 2rem;
+                aspect-ratio: 1/1;
+                border-radius: 100%;
+                border: 1.5px solid white;
+            }
+
+            div {
+                color: white;
+                font-family: "Rubik", sans-serif;
+                width: fit-content;
+                padding-left: 0.25rem;
+                span {
+                    font-size:x-small;
+                    color: var(--text-dark-grayish-violet)
+                }
+                flex-grow: 1;
+            }
+            #menu {
+                padding-right: 1.5rem;
+                color: white;
+            }
+        }
+    }
+    .app {
+        background-color: var(--bg-app);
+        width: 100%;
+        flex-grow: 1;
+        border-radius: 1vh 1vh 3vh 3vh;
+    }
+}
